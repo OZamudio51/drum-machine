@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'
+import './App.scss'
 import PadBank from './PadBank';
 
 const bankOne = [
@@ -136,10 +136,18 @@ class App extends React.Component {
   }
 
   powerControl() {
-    this.setState({
-      power: !this.state.power,
-      display: String.fromCharCode(160)
-    });
+    if(!this.state.power) {
+      this.setState({
+        power: !this.state.power,
+        display: 'Power off'
+      });
+    } else {
+      this.setState({
+        power: !this.state.power,
+        display: 'Power on',
+      })
+    }
+    console.log('power');
   }
 
   selectBank() {
@@ -156,6 +164,7 @@ class App extends React.Component {
         currentPadBankId: 'Heater Kit',
       });
     }
+    console.log('bank selected')
   }
 
   displayClipName(name) {
@@ -212,19 +221,19 @@ class App extends React.Component {
         <div className='controls-container'>
           <div className='control'>
             <p>Power</p>
-            <div onCLick={this.powerControl} className='select'>
-              <div style={powerSlider} className='inner'/>
+            <div onClick={this.powerControl} className='select'>
+              <div style={powerSlider} className='inner' />
             </div>
           </div>
           <p id='display'>
             {this.state.display}
           </p>
           <div className='volume-slider'>
-            <input type='range' min='0' max='1' step='0.01' value={this.state.sliderVal} onCange={this.adjustVolume} />
+            <input type='range' min='0' max='1' step='0.01' value={this.state.sliderVal} onChange={this.adjustVolume} />
           </div>
           <div className='control'>
             <p>Bank</p>
-            <div onClick={this.selectBank} className='select'>
+            <div className='select' onClick={this.selectBank}>
               <div style={bankSlider} className='inner' />
             </div>
           </div>

@@ -2,8 +2,8 @@ import React from 'react';
 
 
 const activeStyle = {
-    backgroundColor: 'orange',
-    boxShadow: '0 3px orange',
+    backgroundColor: 'darkred',
+    boxShadow: '0 3px darkred',
     height: 77,
     marginTop: 13
   };
@@ -41,7 +41,7 @@ class DrumPad extends React.Component {
 
     activatePad() {
         if(this.props.power){
-            this.state.padStyle.backgroundColor === 'orange' ?
+            this.state.padStyle.backgroundColor === 'darkred' ?
             this.setState({
                 padStyle: inactiveStyle
             }) : 

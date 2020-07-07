@@ -16,7 +16,8 @@ class PadBank extends React.Component{
                          keyTrigger = {padBankArr[i].keyTrigger}
                          keyCode = {padBankArr[i].keyCode}
                          updateDisplay = {this.props.updateDisplay}
-                         power = {this.props.power} />
+                         power = {this.props.power}
+                         key={i} />
             )
         }) : 
         padBank = this.props.currentPadBank.map((drumObj, i, padBankArr) => {
@@ -26,7 +27,8 @@ class PadBank extends React.Component{
                          keyTrigger = {padBankArr[i].keyTrigger}
                          keyCode = {padBankArr[i].keyCode}
                          updateDisplay = {this.props.updateDisplay}
-                         power = {this.props.power} />
+                         power = {this.props.power}
+                         key={i} />
             )
         }); 
         return (
