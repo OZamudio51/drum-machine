@@ -122,7 +122,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       power: true,
-      display: String.fromCharCode(160),
+      display: 'Power on',
       currentPadBank: bankOne,
       currentPadBankId: 'Heater Kit',
       sliderVal: 0.3
@@ -136,18 +136,11 @@ class App extends React.Component {
   }
 
   powerControl() {
-    if(!this.state.power) {
-      this.setState({
-        power: !this.state.power,
-        display: 'Power off'
-      });
-    } else {
-      this.setState({
-        power: !this.state.power,
-        display: 'Power on',
-      })
-    }
-    console.log('power');
+        this.setState({
+          power: !this.state.power,
+          display: String.fromCharCode(160),
+        });
+      
   }
 
   selectBank() {
@@ -164,7 +157,6 @@ class App extends React.Component {
         currentPadBankId: 'Heater Kit',
       });
     }
-    console.log('bank selected')
   }
 
   displayClipName(name) {

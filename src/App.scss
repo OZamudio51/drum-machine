@@ -19,10 +19,11 @@ body {
 }
 
 .inner-container {
-  outline: 5px solid darkred;
   position: relative;
   width: 660px;
   text-align: center;
+  border: 5px solid darkred;
+  border-radius: 90px;
   background-color: lighten(darkgrey, 20%);
   .pad-bank {
     width: $padWidth * 3 + 32;
